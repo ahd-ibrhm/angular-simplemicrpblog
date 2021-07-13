@@ -1,0 +1,53 @@
+<div class="container">
+<h1>{{title}}</h1>
+
+<div id="timeline">
+  <h2 class="welcome">Welcome <span class="welcome_realname"> {{user.real_name}}! </span></h2>
+
+  <div *ngIf="newPosts.length>0;then newposts else noposts"> </div>
+
+
+    <div class="row">
+
+      <ng-template #noposts>
+        <div class="col-sm-12 input-container flex-container">
+          <span class="chars-remaining">{{charsRemaining}}</span>
+        <input #post class="addPost" id="post" type="text" placeholder="write a tweet" [(ngModel)]='newMessage' (keyup)="onKey(post.value.length)" [ngClass]="{'warn': charsRemaining<1}">
+        <button class="addTweet glyphicon glyphicon-send" (click)="addPost()"></button>
+        </div>
+      </ng-template>
+
+
+
+    <ng-template #newposts>
+      <div class="tweet-container">
+      <li class="col-sm-12 " *ngFor="let post of newPosts; index as i ">
+        <div class="leftside col-sm-1">
+          <img class="avatar" [src]="post.user.avatar">
+        </div>
+
+        <div class="rightside col-sm-11">
+          <p class="user-info"> {{post.user.real_name}} @{{post.user.username}}</p>
+          <p class="tweet-date"> {{post.timeStamp.toLocaleString()}}</p>
+          <p class="tweet"> {{post.message}}  </p>
+          <button class="delete glyphicon glyphicon-remove" (click)="deletePost(i)"></button>
+        </div>
+      </li>
+
+      <div class="input-container col-sm-12 flex-container">
+        <span class="chars-remaining">{{charsRemaining}}</span>
+        <input #post id="post" type="text" placeholder="write a tweet" [(ngModel)]='newMessage' (keyup)="onKey(post.value.length)" [ngClass]="{'warn': charsRemaining<1}">
+        <button class="addTweet glyphicon glyphicon-send" (click)="addPost()"></button>
+      </div>
+
+      </div>
+    </ng-template>
+
+
+
+</div>
+
+</div>
+
+</div>
+

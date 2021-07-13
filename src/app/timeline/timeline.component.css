@@ -1,0 +1,86 @@
+li{
+  list-style: none;
+}
+
+.avatar{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+#timeline{
+  background: #eeeeee;
+  padding: 15px;
+}
+
+.tweet{
+  display:inline-block;
+  padding: 10px 10px;
+  background: #8d9c8d;
+  width: 97%;
+  font-size: 20px;
+  color: white;
+}
+
+.user-info{
+  font-size: 12px;
+  color: green;
+  display: inline-block;
+}
+
+.tweet-date{
+  float:right;
+  color: green;
+  font-size: 12px;
+}
+
+.welcome_realname{
+  color:green;
+  font-style: italic;
+}
+
+.warn{
+  background:red;
+  color:white;
+}
+
+.chars-remaining{
+  color: green;
+  font-size: 15px;
+  margin-right: 5px;
+  align-items: center;
+  display: flex;
+}
+
+
+#post{
+  flex-grow: 1;
+  height: 50px;
+}
+
+.flex-container{
+  display: flex;
+}
+
+
+.tweet-container >li{
+  margin-bottom: 20px;
+}
+
+
+.welcome{
+  margin-bottom: 50px;
+}
+
+.delete{
+  color:red;
+  vertical-align: middle;
+  border:none;
+}
+
+.addTweet{
+  font-size: 26px;
+  color: green;
+  border: none;
+  text-align: center;
+}
